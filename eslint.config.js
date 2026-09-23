@@ -1,0 +1,17 @@
+// https://docs.expo.dev/guides/using-eslint/
+const { defineConfig } = require('eslint/config')
+const expoConfig = require('eslint-config-expo/flat')
+const prettierConfig = require('eslint-config-prettier')
+
+module.exports = defineConfig([
+    expoConfig,
+    prettierConfig,
+    {
+        ignores: ['dist/*', 'src/common/types/generated.graphql.ts'],
+        rules: {
+            'react/no-unescaped-entities': 'off',
+            'react-hooks/refs': 'warn',
+            'react-hooks/set-state-in-effect': 'warn',
+        },
+    },
+])
