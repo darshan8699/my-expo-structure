@@ -24,8 +24,9 @@ export const PRACTICALS: PracticalItem[] = [
     {
         id: '4',
         title: 'Practical 4',
-        description: 'Native Device Modules: Camera · Geolocation · Biometrics & Keychain',
-        comingSoon: true,
+        description:
+            'Architecture & Concepts: MMKV · Formik & Yup · React Hook Form · Redux Saga/Thunk · Secure Storage · Fastlane',
+        route: '/practical-4',
     },
     {
         id: '5',
