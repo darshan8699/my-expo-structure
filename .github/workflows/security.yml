@@ -2,9 +2,9 @@ name: Security & Secrets Scan
 
 on:
   push:
-    branches: [main, develop, expo-structure, eas-build]
+    branches: [main, develop, eas-build]
   pull_request:
-    branches: [main, develop, expo-structure, eas-build]
+    branches: [main, develop, eas-build]
 
 jobs:
   # Job 1: Secrets scanning with GitLeaks (mirrors asthma's atlassian/git-secrets-scan)

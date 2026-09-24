@@ -2,9 +2,9 @@ name: Continuous Integration & Deployment (CI/CD)
 
 on:
   push:
-    branches: [main, develop, expo-structure, eas-build]
+    branches: [main, develop, eas-build]
   pull_request:
-    branches: [main, develop, expo-structure, eas-build]
+    branches: [main, develop, eas-build]
   workflow_dispatch:
     inputs:
       build_type:
