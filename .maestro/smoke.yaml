@@ -1,0 +1,33 @@
+appId: com.darshan8699.myexpostructure
+name: Smoke Test
+tags:
+  - smoke
+---
+- launchApp
+- tapOn:
+    text: "192.168.0.104:8081"
+    optional: true
+- tapOn:
+    text: "localhost:8081"
+    optional: true
+- tapOn:
+    text: "MyExpoStructure"
+    index: 1
+    optional: true
+- extendedWaitUntil:
+    visible: "Hello World|Continue|Close"
+    timeout: 20000
+- runFlow:
+    when:
+      visible: "Close"
+    commands:
+      - tapOn: "Close"
+- runFlow:
+    when:
+      visible: "Continue"
+    commands:
+      - tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Hello World"
+    timeout: 10000
+- assertVisible: "Hello World"

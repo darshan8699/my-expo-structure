@@ -11,6 +11,7 @@
     "axios": "^1.20.0",
     "expo": "~57.0.24",
     "expo-constants": "~57.0.19",
+    "expo-dev-client": "~57.0.8",
     "expo-device": "~57.0.2",
     "expo-font": "~57.0.4",
     "expo-glass-effect": "~57.0.3",
@@ -48,10 +49,19 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/client-preset": "^4.3.1",
+    "@graphql-codegen/typescript": "^4.0.9",
+    "@graphql-codegen/typescript-operations": "^4.2.3",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
     "@react-native/jest-preset": "^0.86.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.2",
     "@types/jest": "^29.5.13",
     "@types/react": "~19.2.2",
     "@types/react-test-renderer": "^19.1.0",
+    "dotenv": "^17.4.2",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~57.0.2",
     "eslint-config-prettier": "^9.1.2",
@@ -61,9 +71,12 @@
     "lint-staged": "^15.5.2",
     "prettier": "^3.8.4",
     "react-test-renderer": "19.2.3",
+    "semantic-release": "^24.2.9",
+    "semantic-release-expo": "^2.2.3",
     "typescript": "~6.0.3"
   },
   "scripts": {
+    "codegen": "node -r dotenv/config node_modules/.bin/graphql-codegen --config codegen.yml",
     "start": "expo start",
     "start:clear": "expo start --clear",
     "start:dev": "expo start --dev-client",
@@ -72,6 +85,19 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
+    "build:dev:android": "eas build --profile development --platform android",
+    "build:dev:ios": "eas build --profile development --platform ios",
+    "build:dev:ios-sim": "eas build --profile development-simulator --platform ios",
+    "build:dev:all": "eas build --profile development --platform all",
+    "build:staging:android": "eas build --profile staging --platform android",
+    "build:staging:ios": "eas build --profile staging --platform ios",
+    "build:staging:all": "eas build --profile staging --platform all",
+    "build:prod:android": "eas build --profile production --platform android",
+    "build:prod:ios": "eas build --profile production --platform ios",
+    "build:prod:all": "eas build --profile production --platform all",
+    "build:web": "expo export --platform web",
+    "submit:android": "eas submit --platform android",
+    "submit:ios": "eas submit --platform ios",
     "reset-project": "node ./scripts/reset-project.js",
     "lint": "expo lint",
     "lint:fix": "expo lint --fix",
@@ -80,7 +106,41 @@
     "doctor": "npx expo-doctor",
     "test": "jest --w=3",
     "test:coverage": "jest --watchAll=false --coverage --ci --silent --logHeapUsage --w=3",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:e2e:local": "~/.maestro/bin/maestro --platform android test .maestro; ~/.maestro/bin/maestro --platform ios test .maestro"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "release": {
+    "tagFormat": "v${version}",
+    "repositoryUrl": "git@github.com:darshan8699/my-expo-structure.git",
+    "branches": [
+      "main",
+      "develop"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "semantic-release-expo",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "app.json"
+          ]
+        }
+      ]
+    ]
   },
   "private": true
 }

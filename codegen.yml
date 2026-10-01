@@ -1,0 +1,14 @@
+overwrite: true
+schema:
+  - '${EXPO_PUBLIC_GRAPHQL_API_URL}':
+      headers:
+        User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.3'
+generates:
+  src/common/types/generated.graphql.ts:
+    documents: "src/**/*.request.graphql"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      maybeValue: T

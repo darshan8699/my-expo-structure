@@ -1,0 +1,9 @@
+query GetAllAsthmaGoals($pageSize: Int = 100) {
+  getAllAsthmagoals(pageSize: $pageSize) {
+    items {
+      id
+      name
+      status
+    }
+  }
+}
