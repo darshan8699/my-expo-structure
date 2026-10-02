@@ -1,9 +1,9 @@
+import styles from '@/pages/practical-2/react-query/react-query-demo.style'
+import { Spacing } from '@/utils/common/theme'
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import React from 'react'
 import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native'
-import { Spacing } from '@/common/theme'
-import styles from '@/pages/practical-2/react-query/react-query-demo.style'
 
 const ACCENT = '#FF4154'
 const queryClient = new QueryClient()

@@ -1,5 +1,5 @@
+import { BorderRadius, Colors, FontFamily, FontSize, Spacing } from '@/utils/common/theme'
 import { StyleSheet } from 'react-native'
-import { Colors, BorderRadius, FontFamily, FontSize, Spacing } from '@/common/theme'
 
 const C = '#FF4154'
 

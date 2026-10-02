@@ -1,11 +1,11 @@
-import React, { useState, useMemo } from 'react'
-import { View, Text, TouchableOpacity, FlatList, SafeAreaView, ActivityIndicator, Alert } from 'react-native'
-import { router } from 'expo-router'
 import { AppTextInput } from '@/components/common'
-import { Colors } from '@/common/theme'
-import type { PracticalItem } from '@/pages/home/home.type'
-import { PRACTICALS, PAGE_SIZE } from '@/pages/home/home.data'
+import { PAGE_SIZE, PRACTICALS } from '@/pages/home/home.data'
 import styles from '@/pages/home/home.style'
+import type { PracticalItem } from '@/pages/home/home.type'
+import { Colors } from '@/utils/common/theme'
+import { router } from 'expo-router'
+import { useMemo, useState } from 'react'
+import { ActivityIndicator, Alert, FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
 
 export default function HomeScreen() {
     const [searchQuery, setSearchQuery] = useState('')

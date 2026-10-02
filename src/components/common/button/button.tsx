@@ -1,8 +1,8 @@
+import { Colors } from '@/utils/common/theme'
 import React from 'react'
-import { Pressable, Text, ActivityIndicator } from 'react-native'
-import { Colors } from '@/common/theme'
-import type { ButtonProps } from './button.type'
+import { ActivityIndicator, Pressable, Text } from 'react-native'
 import styles from './button.style'
+import type { ButtonProps } from './button.type'
 
 const Button: React.FC<ButtonProps> = ({
     label,

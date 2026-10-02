@@ -1,5 +1,5 @@
+import { Colors, FontFamily } from '@/utils/common/theme'
 import { Stack } from 'expo-router'
-import { Colors, FontFamily } from '@/common/theme'
 
 export default function Practical2Layout() {
     return (

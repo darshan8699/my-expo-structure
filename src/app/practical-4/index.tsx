@@ -1,7 +1,6 @@
-import React from 'react'
-import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native'
+import { BorderRadius, Colors, FontFamily, FontSize, Spacing } from '@/utils/common/theme'
 import { useRouter } from 'expo-router'
-import { Colors, BorderRadius, FontFamily, FontSize, Spacing } from '@/common/theme'
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 
 interface ConceptMenuItem {
     id: string

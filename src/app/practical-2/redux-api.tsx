@@ -1,10 +1,10 @@
+import styles from '@/pages/practical-2/redux-api/redux-api-demo.style'
+import { Spacing } from '@/utils/common/theme'
 import { configureStore, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import React from 'react'
 import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native'
 import { Provider, useDispatch, useSelector } from 'react-redux'
-import { Spacing } from '@/common/theme'
-import styles from '@/pages/practical-2/redux-api/redux-api-demo.style'
 
 const ACCENT = '#6C63FF'
 

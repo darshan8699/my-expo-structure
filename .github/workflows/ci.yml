@@ -58,7 +58,7 @@ jobs:
       - name: 🏥 Run Expo Doctor
         run: npm run doctor
 
-  # Job 2: Test coverage + Codacy upload (develop branch only, mirrors asthma Bitbucket pipeline)
+  # Job 2: Test coverage + Codacy upload (develop branch only)
   test-coverage:
     name: Test Coverage
     runs-on: ubuntu-latest
@@ -180,4 +180,3 @@ jobs:
             PLATFORM="all"
           fi
           eas build --platform "$PLATFORM" --profile production --non-interactive --auto-submit
-

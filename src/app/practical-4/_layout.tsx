@@ -1,5 +1,5 @@
+import { Colors } from '@/utils/common/theme'
 import { Stack } from 'expo-router'
-import { Colors } from '@/common/theme'
 
 export default function Practical4Layout() {
     return (

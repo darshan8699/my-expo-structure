@@ -1,9 +1,8 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { router } from 'expo-router'
 import { Button } from '@/components/common'
-import { Colors, FontFamily, FontSize, Spacing, BorderRadius } from '@/common/theme'
+import { BorderRadius, Colors, FontFamily, FontSize, Spacing } from '@/utils/common/theme'
+import { router } from 'expo-router'
+import { StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function AccountScreen() {
     const handleLogout = () => {

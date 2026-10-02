@@ -1,5 +1,5 @@
+import { BorderRadius, Colors, FontSize, scale, Spacing, verticalScale } from '@/utils/common/theme'
 import { StyleSheet } from 'react-native'
-import { Colors, Spacing, FontSize, BorderRadius, scale, verticalScale } from '@/common/theme'
 
 export const DRAWER_WIDTH = scale(280)
 
