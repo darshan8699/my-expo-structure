@@ -1,9 +1,8 @@
-import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { useDrawer } from '@/services/context/drawer-context'
 import CustomDrawer from '@/components/modules/custom-drawer/custom-drawer'
-import { Colors, FontSize, Spacing, verticalScale, BorderRadius } from '@/common/theme'
+import { useDrawer } from '@/services/context/drawer-context'
+import { Colors, FontSize, Spacing, verticalScale } from '@/utils/common/theme'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function P3SettingsScreen() {
     const { openDrawer } = useDrawer()

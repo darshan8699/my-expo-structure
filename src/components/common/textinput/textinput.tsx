@@ -1,8 +1,8 @@
+import { Colors } from '@/utils/common/theme'
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
-import { Colors } from '@/common/theme'
-import type { AppTextInputProps } from './textinput.type'
+import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import styles from './textinput.style'
+import type { AppTextInputProps } from './textinput.type'
 
 const AppTextInput: React.FC<AppTextInputProps> = ({
     label,

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native'
-import { Spacing } from '@/common/theme'
 import styles from '@/pages/practical-2/graphql/graphql-demo.style'
+import { Spacing } from '@/utils/common/theme'
+import { useState } from 'react'
+import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native'
 
 const ACCENT = '#E535AB'
 const GQL_URL = 'https://countries.trevorblades.com/'

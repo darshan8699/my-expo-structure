@@ -1,7 +1,6 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { BorderRadius, Colors, FontFamily, FontSize, Spacing } from '@/utils/common/theme'
+import { StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Colors, FontFamily, FontSize, Spacing, BorderRadius } from '@/common/theme'
 
 export default function P1SettingsScreen() {
     return (

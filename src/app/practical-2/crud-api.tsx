@@ -1,9 +1,9 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, Alert, FlatList, Text, TouchableOpacity, View } from 'react-native'
-import { Spacing } from '@/common/theme'
 import { AppModal, AppTextInput } from '@/components/common'
 import styles from '@/pages/practical-2/crud-api/crud-api-demo.style'
+import { Spacing } from '@/utils/common/theme'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { ActivityIndicator, Alert, FlatList, Text, TouchableOpacity, View } from 'react-native'
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com/posts'
 const ACCENT = '#22C55E'

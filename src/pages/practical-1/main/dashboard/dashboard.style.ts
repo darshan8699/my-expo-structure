@@ -1,5 +1,5 @@
+import { BorderRadius, Colors, FontFamily, FontSize, Spacing } from '@/utils/common/theme'
 import { StyleSheet } from 'react-native'
-import { Colors, FontFamily, FontSize, Spacing, BorderRadius } from '@/common/theme'
 
 const styles = StyleSheet.create({
     safeArea: {

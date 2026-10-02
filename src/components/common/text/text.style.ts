@@ -1,5 +1,5 @@
+import { Colors, FontFamily, FontSize } from '@/utils/common/theme'
 import { StyleSheet } from 'react-native'
-import { Colors, FontFamily, FontSize } from '@/common/theme'
 
 const styles = StyleSheet.create({
     base: {

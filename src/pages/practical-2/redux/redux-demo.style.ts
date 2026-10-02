@@ -1,5 +1,5 @@
+import { BorderRadius, Colors, FontFamily, FontSize, Spacing, rf, scale, verticalScale } from '@/utils/common/theme'
 import { StyleSheet } from 'react-native'
-import { Colors, BorderRadius, FontFamily, FontSize, Spacing, scale, verticalScale, rf } from '@/common/theme'
 
 const REDUX_ACCENT = '#764ABC'
 

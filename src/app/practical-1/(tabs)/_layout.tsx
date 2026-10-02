@@ -1,7 +1,7 @@
+import { Colors, FontFamily, FontSize, Spacing, verticalScale } from '@/utils/common/theme'
 import { Tabs } from 'expo-router'
-import { Text, StyleSheet } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { Colors, FontFamily, FontSize, Spacing, verticalScale } from '@/common/theme'
 
 const tabStyles = StyleSheet.create({
     tabIconEmoji: {

@@ -1,5 +1,5 @@
+import { BorderRadius, Colors, FontSize, Spacing, verticalScale } from '@/utils/common/theme'
 import { StyleSheet } from 'react-native'
-import { Colors, Spacing, FontSize, BorderRadius, verticalScale } from '@/common/theme'
 
 export const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: Colors.surface },
