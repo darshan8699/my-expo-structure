@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MyExpoStructure",
-    "slug": "MyExpoStructure",
+    "slug": "myexpostructure",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/images/icon.png",
@@ -51,7 +51,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "1454ab29-793f-4dd3-8692-7d5ba0c5668e"
+        "projectId": "16dbf4dd-24ff-4330-ab57-941c15748b5c"
       }
     },
     "owner": "darshanrana"
