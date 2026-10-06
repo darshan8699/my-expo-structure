@@ -3,29 +3,29 @@ import { Stack, useLocalSearchParams } from 'expo-router'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-// Import all the basic concept components
+// Import all concept components (sourced from basic-concepts)
 import DebuggingExample from '@/components/common/basic-concepts/debugging'
 import FastlaneExample from '@/components/common/basic-concepts/fastlane'
 import FormikYupExample from '@/components/common/basic-concepts/formik-yup'
 import MMKVExample from '@/components/common/basic-concepts/mmkv'
-import MobXUI from '@/components/common/basic-concepts/mobx'
+import MobXConceptExample from '@/components/common/basic-concepts/mobx'
 import ReactHookFormExample from '@/components/common/basic-concepts/react-hook-form'
-import ReactQueryExample from '@/components/common/basic-concepts/react-query'
+import ReactQueryConceptExample from '@/components/common/basic-concepts/react-query'
 import ReduxSagaExample from '@/components/common/basic-concepts/redux-saga'
 import ReduxThunkExample from '@/components/common/basic-concepts/redux-thunk'
-import ReduxToolkitExample from '@/components/common/basic-concepts/redux-toolkit'
+import ReduxToolkitConceptExample from '@/components/common/basic-concepts/redux-toolkit'
 import SecureStorageExample from '@/components/common/basic-concepts/secure-storage'
 import SimpleReduxExample from '@/components/common/basic-concepts/simple-redux'
-import ZustandExample from '@/components/common/basic-concepts/zustand'
+import ZustandConceptExample from '@/components/common/basic-concepts/zustand'
 
 type ConceptId =
     | 'simple-redux'
-    | 'redux-toolkit'
+    | 'redux-toolkit-concept'
     | 'redux-thunk'
     | 'redux-saga'
-    | 'mobx'
-    | 'zustand'
-    | 'react-query'
+    | 'mobx-concept'
+    | 'zustand-concept'
+    | 'react-query-concept'
     | 'mmkv'
     | 'secure-storage'
     | 'react-hook-form'
@@ -35,13 +35,13 @@ type ConceptId =
 
 const CONCEPT_MAP: Record<ConceptId, { component: React.ComponentType; title: string }> = {
     'simple-redux': { component: SimpleReduxExample, title: 'Simple Redux' },
-    'redux-toolkit': { component: ReduxToolkitExample, title: 'Redux Toolkit (RTK)' },
+    'redux-toolkit-concept': { component: ReduxToolkitConceptExample, title: 'Redux Toolkit (Concept)' },
     'redux-thunk': { component: ReduxThunkExample, title: 'Redux Thunk' },
     'redux-saga': { component: ReduxSagaExample, title: 'Redux Saga' },
-    mobx: { component: MobXUI, title: 'MobX state' },
-    zustand: { component: ZustandExample, title: 'Zustand' },
-    'react-query': { component: ReactQueryExample, title: 'React Query' },
-    mmkv: { component: MMKVExample, title: 'MMKV storage' },
+    'mobx-concept': { component: MobXConceptExample, title: 'MobX (Concept)' },
+    'zustand-concept': { component: ZustandConceptExample, title: 'Zustand (Concept)' },
+    'react-query-concept': { component: ReactQueryConceptExample, title: 'React Query (Concept)' },
+    mmkv: { component: MMKVExample, title: 'MMKV Storage' },
     'secure-storage': { component: SecureStorageExample, title: 'Secure Storage' },
     'react-hook-form': { component: ReactHookFormExample, title: 'React Hook Form' },
     'formik-yup': { component: FormikYupExample, title: 'Formik & Yup' },
@@ -49,7 +49,7 @@ const CONCEPT_MAP: Record<ConceptId, { component: React.ComponentType; title: st
     fastlane: { component: FastlaneExample, title: 'Fastlane Automation' },
 }
 
-export default function ConceptScreen() {
+export default function P2ConceptScreen() {
     const { id } = useLocalSearchParams<{ id: ConceptId }>()
 
     const mapped = id ? CONCEPT_MAP[id] : null
@@ -62,9 +62,7 @@ export default function ConceptScreen() {
                 options={{
                     headerShown: true,
                     title: title,
-                    headerTintColor: '#fff',
-                    headerStyle: { backgroundColor: Colors.primary },
-                    headerTitleStyle: { fontWeight: 'bold' },
+                    headerTintColor: Colors.primary,
                 }}
             />
             {ActiveComponent ? <ActiveComponent /> : <View />}

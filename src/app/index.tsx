@@ -5,7 +5,7 @@ import type { PracticalItem } from '@/pages/home/home.type'
 import { Colors } from '@/utils/common/theme'
 import { router } from 'expo-router'
 import { useMemo, useState } from 'react'
-import { ActivityIndicator, Alert, FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
 
 export default function HomeScreen() {
     const [searchQuery, setSearchQuery] = useState('')
@@ -48,24 +48,13 @@ export default function HomeScreen() {
 
     // Card click handler
     const handlePress = (item: PracticalItem) => {
-        if (item.route) {
-            router.push(item.route as any)
-        } else {
-            Alert.alert(`${item.title} 🚀`, `${item.description}\n\nThis practical module is coming soon!`)
-        }
+        router.push(item.route as any)
     }
 
     const renderItem = ({ item }: { item: PracticalItem }) => (
         <TouchableOpacity style={styles.card} activeOpacity={0.8} onPress={() => handlePress(item)}>
             <View style={styles.cardContent}>
-                <View style={styles.cardHeader}>
-                    <Text style={styles.cardTitle}>{item.title}</Text>
-                    {item.comingSoon && (
-                        <View style={styles.badgeComingSoon}>
-                            <Text style={styles.badgeTextComingSoon}>Coming Soon</Text>
-                        </View>
-                    )}
-                </View>
+                <Text style={styles.cardTitle}>{item.title}</Text>
                 <Text style={styles.cardDesc}>{item.description}</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
@@ -102,10 +91,6 @@ export default function HomeScreen() {
                         isLoadingMore ? (
                             <View style={styles.loadingFooter}>
                                 <ActivityIndicator size="small" color={Colors.primary} />
-                            </View>
-                        ) : !hasMore && displayedPracticals.length > 0 ? (
-                            <View style={styles.endFooter}>
-                                <Text style={styles.endFooterText}>More practicals coming soon…</Text>
                             </View>
                         ) : undefined
                     }

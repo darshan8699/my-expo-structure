@@ -13,7 +13,7 @@ export default function Practical2Layout() {
                 headerTintColor: Colors.primary,
             }}
         >
-            <Stack.Screen name="index" options={{ title: 'Practical 2 — State Management' }} />
+            <Stack.Screen name="index" options={{ title: 'Practical 2 — State & Architecture' }} />
             <Stack.Screen name="redux" options={{ title: 'Redux (Classic)' }} />
             <Stack.Screen name="redux-toolkit" options={{ title: 'Redux Toolkit' }} />
             <Stack.Screen name="zustand" options={{ title: 'Zustand' }} />
@@ -23,6 +23,7 @@ export default function Practical2Layout() {
             <Stack.Screen name="crud-api" options={{ title: 'CRUD API (Axios)' }} />
             <Stack.Screen name="graphql" options={{ title: 'GraphQL' }} />
             <Stack.Screen name="redux-api" options={{ title: 'Redux + API' }} />
+            <Stack.Screen name="concepts/[id]" options={{ title: 'Concept' }} />
         </Stack>
     )
 }
