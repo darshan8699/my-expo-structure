@@ -54,7 +54,7 @@ File: [`.husky/commit-msg`](../../../../.husky/commit-msg)
 npx commitlint --edit $1
 ```
 
-Validates the commit message against the **Conventional Commits** spec (see [git docs](../git/README.md)).
+Validates the commit message against the **Conventional Commits** spec (see [git docs](../git/git.md)).
 
 If the message does not match the required format (e.g. `feat: ...`, `fix: ...`), the commit is **aborted**.
 

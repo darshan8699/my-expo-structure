@@ -1,56 +1,94 @@
-# Welcome to your Expo app 👋
+# MyExpoStructure 🚀
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A comprehensive, production-ready React Native architecture built on **Expo SDK 57**, featuring modern file-based routing (`expo-router`), multi-engine state management, REST & GraphQL integrations, native development build configurations, and practical reference implementations.
 
-## Get started
+---
 
-1. Install dependencies
+## 📚 Documentation
 
-   ```bash
-   npm install
-   ```
+Detailed documentation is organized under the [`src/docs/`](src/docs/README.md) directory:
 
-2. Start the app
+- **[Documentation Hub](src/docs/README.md)** — Central directory and index of all guides.
+- **[Practical 1: Auth Flow & Dashboard Tabs](src/docs/practical-1/README.md)** — Login, Sign Up, Forgot Password & Bottom Tabs.
+- **[Practical 2: State Management & Architecture Lab](src/docs/practical-2/README.md)** — Redux, RTK, Zustand, MobX, Context, React Query, GraphQL, MMKV, and Formik.
+- **[Practical 3: Dynamic Grid Generator & Navigation Lab](src/docs/practical-3/README.md)** — Dynamic $N \times N$ grid, 3-state color cycling, Custom Left Drawer, and Tabs.
+- **[Practical 4: Production Auth Module with REST API](src/docs/practical-4/README.md)** — Real backend auth API, atomic components, and responsive scaling.
+- **[Practical 5: Full CRUD Architecture & Redux State](src/docs/practical-5/README.md)** — JSONPlaceholder user management, Redux state flow, and Counter demo.
+- **[Extra: Concepts & Developer Tools](src/docs/extra/README.md)** — Development builds, storage, validation, CI/CD, Husky, Maestro, and Sentry.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🏃 Quick Start
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 1. Install Dependencies
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Start Development Server
+```bash
+# Standard Expo dev server
+npm start
 
-### Other setup steps
+# With Metro cache cleared
+npm run start:clear
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+# Development client (supports native modules such as MMKV)
+npm run start:dev
+```
 
-## Learn more
+### 3. Run on Target Platform
+```bash
+# Run on iOS Simulator
+npm run ios
 
-To learn more about developing your project with Expo, look at the following resources:
+# Run on Android Emulator
+npm run android
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Run in Web Browser
+npm run web
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🧪 Testing & Linting
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+# Run Jest unit test suite
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Lint codebase
+npm run lint
+
+# Check code formatting
+npm run format:check
+```
+
+---
+
+## 🏛️ Project Structure
+
+```text
+├── src/
+│   ├── apis/                    # API client configurations & endpoints
+│   ├── app/                     # File-based navigation routes (Expo Router)
+│   ├── assets/                  # Images, fonts, and static assets
+│   ├── components/              # Shared UI design system & basic concepts
+│   ├── docs/                    # Complete project & practical documentation
+│   │   ├── practical-1/         # Practical 1 documentation & steps
+│   │   ├── practical-2/         # Practical 2 documentation & steps
+│   │   ├── practical-3/         # Practical 3 documentation & steps
+│   │   ├── practical-4/         # Practical 4 documentation & steps
+│   │   ├── practical-5/         # Practical 5 documentation & steps
+│   │   ├── extra/               # Concepts, native builds, and developer tooling
+│   │   └── README.md            # Documentation portal
+│   ├── pages/                   # Feature presentation, styles, types & business logic
+│   ├── services/                # Context providers, hooks, and external services
+│   └── utils/                   # Theme tokens, formatters, and utility functions
+├── __tests__/                   # Jest automated test suites
+├── .github/workflows/           # CI/CD automation pipelines
+└── app.json                     # Expo configuration
+```
