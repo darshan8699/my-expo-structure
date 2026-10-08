@@ -1,3 +1,3 @@
-import { LoginScreen } from '@/pages/practical-4'
+import { LoginScreen } from '@/components/modules/practical-4'
 
 export default LoginScreen

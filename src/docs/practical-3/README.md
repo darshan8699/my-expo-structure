@@ -2,7 +2,7 @@
 
 > **Module**: Practical 3  
 > **Route Path**: `/practical-3/(tabs)/dashboard`  
-> **Source Directory**: `src/app/practical-3/` & `src/pages/practical-3/`  
+> **Source Directory**: `src/app/practical-3/` & `src/components/modules/practical-3/`  
 > **Key Technologies**: Expo Router, React Native Gesture & Insets, Custom Drawer Context, Responsive Grid Calculations
 
 ---
@@ -30,32 +30,38 @@ src/
 ├── app/
 │   └── practical-3/
 │       ├── _layout.tsx                     # Stack layout managing Tabs, Details & Drawer Screens
-│       ├── detail.tsx                      # Dynamic Grid render screen (takes ?count=N)
-│       ├── screen-1.tsx                    # Drawer Destination Screen 1
-│       ├── screen-2.tsx                    # Drawer Destination Screen 2
-│       ├── screen-3.tsx                    # Drawer Destination Screen 3
+│       ├── detail.tsx                      # Dynamic Grid route (thin re-export)
+│       ├── screen-1.tsx                    # Drawer Screen 1 route (thin re-export)
+│       ├── screen-2.tsx                    # Drawer Screen 2 route (thin re-export)
+│       ├── screen-3.tsx                    # Drawer Screen 3 route (thin re-export)
 │       └── (tabs)/                         # Persistent Tab Group
 │           ├── _layout.tsx                 # Bottom Tabs layout (Dashboard & Settings)
-│           ├── dashboard.tsx               # Number input & quick-select screen
-│           └── settings.tsx                # Settings preferences screen
+│           ├── dashboard.tsx               # Number input route (thin re-export)
+│           └── settings.tsx                # Settings preferences route (thin re-export)
 ├── components/
 │   └── modules/
-│       └── custom-drawer/
-│           ├── custom-drawer.tsx           # Animated slide-in Drawer component
-│           └── custom-drawer.style.ts      # Drawer overlay and list styling
-├── services/
-│   └── context/
-│       └── drawer-context.tsx              # React Context managing drawer isOpen state
-└── pages/
-    └── practical-3/
-        ├── dashboard/
-        │   └── dashboard.style.ts          # Styles for the generator card & quick chips
-        ├── detail/
-        │   ├── detail.style.ts             # Styles for the grid container & cards
-        │   ├── detail.type.ts              # TypeScript interfaces for box state
-        │   └── detail.util.ts              # Mathematical box sizing helper
-        └── drawer-screens/
-            └── drawer-screen.style.ts      # Unified styles for drawer destination screens
+│       ├── custom-drawer/
+│       │   ├── custom-drawer.tsx           # Animated slide-in Drawer component
+│       │   └── custom-drawer.style.ts      # Drawer overlay and list styling
+│       └── practical-3/
+│           ├── DashboardScreen.tsx         # Dashboard generator screen component
+│           ├── DetailScreen.tsx            # Detail grid screen component
+│           ├── SettingsScreen.tsx          # Settings screen component
+│           ├── Screen1.tsx                 # Screen 1 component
+│           ├── Screen2.tsx                 # Screen 2 component
+│           ├── Screen3.tsx                 # Screen 3 component
+│           ├── detail/
+│           │   ├── detail.style.ts         # Styles for the grid container & cards
+│           │   ├── detail.type.ts          # TypeScript interfaces for box state
+│           │   └── detail.util.ts          # Mathematical box sizing helper
+│           ├── dashboard/
+│           │   └── dashboard.style.ts      # Styles for the generator card & quick chips
+│           ├── drawer-screens/
+│           │   └── drawer-screen.style.ts  # Unified styles for drawer destination screens
+│           └── index.ts                    # Practical 3 module barrel export
+└── services/
+    └── context/
+        └── drawer-context.tsx              # React Context managing drawer isOpen state
 ```
 
 ---
@@ -63,7 +69,7 @@ src/
 ## 3. Step-by-Step Implementation Guide
 
 ### Step 1: Responsive Grid Dimension Mathematics
-To guarantee that the $N \times N$ grid fits perfectly across any mobile display without horizontal scrolling or clipping, box dimensions are calculated dynamically in [src/pages/practical-3/detail/detail.util.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-3/detail/detail.util.ts):
+To guarantee that the $N \times N$ grid fits perfectly across any mobile display without horizontal scrolling or clipping, box dimensions are calculated dynamically in [src/components/modules/practical-3/detail/detail.util.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-3/detail/detail.util.ts):
 
 $$\text{availableWidth} = \text{screenWidth} - (2 \times \text{horizontalPadding})$$
 $$\text{totalGaps} = (N - 1) \times \text{gapSize}$$

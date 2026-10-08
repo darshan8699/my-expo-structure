@@ -2,7 +2,7 @@
 
 > **Module**: Practical 5  
 > **Route Path**: `/practical-5`  
-> **Source Directory**: `src/app/practical-5/` & `src/pages/practical-5/`  
+> **Source Directory**: `src/app/practical-5/` & `src/components/modules/practical-5/`  
 > **Test File**: `__tests__/practical-5.test.tsx`  
 > **Key Technologies**: Redux, Axios REST Service Layer, JSONPlaceholder API, Full CRUD Operations, Splash Transition
 
@@ -31,42 +31,43 @@ src/
 ├── app/
 │   └── practical-5/
 │       ├── _layout.tsx                  # Stack layout for Practical 5 routes
-│       ├── index.tsx                    # Splash entry point route
-│       ├── splash.tsx                   # Splash screen route
-│       ├── single-user.tsx              # Single user profile route
-│       ├── add-user.tsx                 # Add user route
-│       ├── update-user.tsx              # Edit/Update user route
-│       └── counter.tsx                  # Redux Counter demo route
-├── pages/
-│   └── practical-5/
-│       ├── index.ts                     # Public export barrel
-│       ├── config/
-│       │   └── baseUrl.ts               # JSONPlaceholder base URL definition
-│       ├── constants/
-│       │   ├── colors.ts                # Color constants
-│       │   └── fontFamily.ts            # Font constants
-│       ├── utils/
-│       │   └── dimension.ts             # Screen dimension scaling helper
-│       ├── services/
-│       │   └── api.ts                   # Centralized Axios CRUD service layer
-│       ├── redux/
-│       │   ├── store.ts                 # Redux Store creation
-│       │   ├── actionTypes.ts           # Redux Action Type string constants
-│       │   ├── actions.ts               # Redux Action Creators
-│       │   └── reducers.ts              # Redux Root Reducer (Counter & Users)
-│       ├── components/
-│       │   ├── Header/                  # Top bar with Back and Action icons
-│       │   ├── Spinner/                 # Modal activity indicator overlay
-│       │   ├── TextInputComp/           # Form text input component
-│       │   ├── UsersList/               # User directory item card
-│       │   └── index.ts                 # Components barrel
-│       └── screens/
-│           ├── splash/                  # Branded splash screen
-│           ├── listOfUsers/             # User directory screen (Read/List)
-│           ├── singleUser/              # User profile card (Read/Detail)
-│           ├── addUser/                 # Create user screen
-│           ├── updateUser/              # Update user screen
-│           └── counter/                 # Redux Counter demo screen
+│       ├── index.tsx                    # Splash entry point route (thin re-export)
+│       ├── splash.tsx                   # Splash screen route (thin re-export)
+│       ├── single-user.tsx              # Single user profile route (thin re-export)
+│       ├── add-user.tsx                 # Add user route (thin re-export)
+│       ├── update-user.tsx              # Edit/Update user route (thin re-export)
+│       └── counter.tsx                  # Redux Counter demo route (thin re-export)
+├── components/
+│   └── modules/
+│       └── practical-5/
+│           ├── index.ts                     # Public export barrel
+│           ├── config/
+│           │   └── baseUrl.ts               # JSONPlaceholder base URL definition
+│           ├── constants/
+│           │   ├── colors.ts                # Color constants
+│           │   └── fontFamily.ts            # Font constants
+│           ├── utils/
+│           │   └── dimension.ts             # Screen dimension scaling helper
+│           ├── services/
+│           │   └── api.ts                   # Centralized Axios CRUD service layer
+│           ├── redux/
+│           │   ├── store.ts                 # Redux Store creation
+│           │   ├── actionTypes.ts           # Redux Action Type string constants
+│           │   ├── actions.ts               # Redux Action Creators
+│           │   └── reducers.ts              # Redux Root Reducer (Counter & Users)
+│           ├── components/
+│           │   ├── Header/                  # Top bar with Back and Action icons
+│           │   ├── Spinner/                 # Modal activity indicator overlay
+│           │   ├── TextInputComp/           # Form text input component
+│           │   ├── UsersList/               # User directory item card
+│           │   └── index.ts                 # Components barrel
+│           └── screens/
+│               ├── splash/                  # Branded splash screen
+│               ├── listOfUsers/             # User directory screen (Read/List)
+│               ├── singleUser/              # User profile card (Read/Detail)
+│               ├── addUser/                 # Create user screen
+│               ├── updateUser/              # Update user screen
+│               └── counter/                 # Redux Counter demo screen
 └── __tests__/
     └── practical-5.test.tsx             # Jest unit tests for CRUD & Redux
 ```
@@ -85,14 +86,14 @@ graph LR
     Store -->|useSelector / getState| UI
 ```
 
-### 1. Action Types ([src/pages/practical-5/redux/actionTypes.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/redux/actionTypes.ts))
+### 1. Action Types ([src/components/modules/practical-5/redux/actionTypes.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/redux/actionTypes.ts))
 ```typescript
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 export const RESET = 'RESET'
 ```
 
-### 2. Action Creators ([src/pages/practical-5/redux/actions.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/redux/actions.ts))
+### 2. Action Creators ([src/components/modules/practical-5/redux/actions.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/redux/actions.ts))
 ```typescript
 import { INCREMENT, DECREMENT, RESET } from './actionTypes'
 
@@ -101,7 +102,7 @@ export const decrement = () => ({ type: DECREMENT })
 export const reset = () => ({ type: RESET })
 ```
 
-### 3. Reducer ([src/pages/practical-5/redux/reducers.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/redux/reducers.ts))
+### 3. Reducer ([src/components/modules/practical-5/redux/reducers.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/redux/reducers.ts))
 ```typescript
 const initialState = {
     counter: 0,
@@ -126,7 +127,7 @@ export const counterReducer = (state = initialState, action: any) => {
 
 ## 4. Centralized API Service Layer
 
-All external HTTP communication is encapsulated inside [src/pages/practical-5/services/api.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/services/api.ts):
+All external HTTP communication is encapsulated inside [src/components/modules/practical-5/services/api.ts](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/services/api.ts):
 
 | Operation | Method | API Endpoint | Description |
 | :--- | :--- | :--- | :--- |
@@ -148,26 +149,26 @@ export const BASE_URL = 'https://jsonplaceholder.typicode.com'
 In `services/api.ts`, create standard methods returning Promises with proper headers.
 
 ### Step 2: Implement Splash Screen with Auto-Transition
-In [src/pages/practical-5/screens/splash/Splash.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/screens/splash/Splash.tsx):
+In [src/components/modules/practical-5/screens/splash/Splash.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/screens/splash/Splash.tsx):
 - Mounts branded loader graphic.
 - Uses `useEffect` timer (2000ms) to trigger `router.replace('/practical-5/listOfUsers')`.
 
 ### Step 3: Implement User Directory (Read)
-In [src/pages/practical-5/screens/listOfUsers/ListOfUsers.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/screens/listOfUsers/ListOfUsers.tsx):
+In [src/components/modules/practical-5/screens/listOfUsers/ListOfUsers.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/screens/listOfUsers/ListOfUsers.tsx):
 - Calls `apiService.getUsers()` on mount.
 - Renders `FlatList` with `UsersList` component.
 - Supports pulling down to refresh.
 - Header button routes to `/practical-5/add-user`.
 
 ### Step 4: Implement Add User (Create)
-In [src/pages/practical-5/screens/addUser/AddUser.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/screens/addUser/AddUser.tsx):
+In [src/components/modules/practical-5/screens/addUser/AddUser.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/screens/addUser/AddUser.tsx):
 - Collects Name, Username, Email, Phone, Website, and Address.
 - Validates that mandatory fields are filled.
 - Dispatches `apiService.createUser(payload)`.
 - On success, alerts user and navigates back.
 
 ### Step 5: Implement Edit User (Update)
-In [src/pages/practical-5/screens/updateUser/UpdateUser.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/screens/updateUser/UpdateUser.tsx):
+In [src/components/modules/practical-5/screens/updateUser/UpdateUser.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/screens/updateUser/UpdateUser.tsx):
 - Extracts prefilled user parameters via `useLocalSearchParams`.
 - Initializes form with existing data.
 - Dispatches `apiService.updateUser(id, updatedPayload)`.
@@ -179,7 +180,7 @@ In [src/pages/practical-5/screens/updateUser/UpdateUser.tsx](file:///Users/darsh
 - Optimistically filters the user out of the local state array.
 
 ### Step 7: Implement Redux Counter Demo
-In [src/pages/practical-5/screens/counter/CounterDemo.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/pages/practical-5/screens/counter/CounterDemo.tsx):
+In [src/components/modules/practical-5/screens/counter/CounterDemo.tsx](file:///Users/darshan/Documents/Projects/ReactNative/MyStructure/MyExpoStructure/src/components/modules/practical-5/screens/counter/CounterDemo.tsx):
 - Connects to Redux store via `useSelector` and `useDispatch`.
 - Dispatches `increment()`, `decrement()`, and `reset()`.
 

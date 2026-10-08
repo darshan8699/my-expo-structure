@@ -1,3 +1,3 @@
-import { CounterDemoScreen } from '@/pages/practical-5'
+import { CounterDemoScreen } from '@/components/modules/practical-5'
 
 export default CounterDemoScreen

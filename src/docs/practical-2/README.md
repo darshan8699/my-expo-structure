@@ -2,7 +2,7 @@
 
 > **Module**: Practical 2  
 > **Route Path**: `/practical-2`  
-> **Source Directory**: `src/app/practical-2/` & `src/pages/practical-2/`  
+> **Source Directory**: `src/app/practical-2/` & `src/components/modules/practical-2/`  
 > **Key Technologies**: Redux, Redux Toolkit, Zustand, MobX, React Context + useReducer, TanStack React Query, Axios REST, GraphQL Apollo, MMKV, Formik, Yup, Expo Router
 
 ---
@@ -24,30 +24,36 @@ src/
 ├── app/
 │   └── practical-2/
 │       ├── _layout.tsx                  # Stack layout with custom headers
-│       ├── index.tsx                    # Lab Dashboard (Interactive & Concept menus)
-│       ├── redux.tsx                    # Classic Redux playground
-│       ├── redux-toolkit.tsx            # Redux Toolkit (RTK) playground
-│       ├── zustand.tsx                  # Zustand hook-store playground
-│       ├── mobx.tsx                     # MobX observable & observer playground
-│       ├── context.tsx                  # React Context + useReducer playground
-│       ├── react-query.tsx              # TanStack Query server-cache playground
-│       ├── crud-api.tsx                 # Axios REST CRUD operations playground
-│       ├── graphql.tsx                  # GraphQL public query playground
-│       ├── redux-api.tsx                # Redux async thunk API playground
+│       ├── index.tsx                    # Lab Dashboard route (thin re-export)
+│       ├── redux.tsx                    # Classic Redux playground route
+│       ├── redux-toolkit.tsx            # Redux Toolkit (RTK) playground route
+│       ├── zustand.tsx                  # Zustand hook-store playground route
+│       ├── mobx.tsx                     # MobX observable playground route
+│       ├── context.tsx                  # React Context playground route
+│       ├── react-query.tsx              # TanStack Query playground route
+│       ├── crud-api.tsx                 # Axios REST CRUD playground route
+│       ├── graphql.tsx                  # GraphQL public query playground route
+│       ├── redux-api.tsx                # Redux async thunk playground route
 │       └── concepts/
-│           └── [id].tsx                 # Dynamic route rendering deep-dive concept modules
-├── pages/
-│   └── practical-2/
-│       ├── dashboard/
-│       │   ├── p2-dashboard.data.ts     # Demo list and Concept categories metadata
-│       │   ├── p2-dashboard.style.ts    # Dashboard styling
-│       │   └── p2-dashboard.type.ts     # TypeScript interfaces
-│       ├── redux/                       # Redux Classic demo styles
-│       ├── redux-toolkit/               # RTK demo styles
-│       ├── zustand/                     # Zustand demo styles
-│       ├── mobx/                        # MobX demo styles
-│       ├── context/                     # Context API demo styles
-│       ├── react-query/                 # React Query demo styles
+│           └── [id].tsx                 # Dynamic route for concept modules
+└── components/
+    └── modules/
+        └── practical-2/
+            ├── DashboardScreen.tsx      # Lab Dashboard screen component
+            ├── ReduxScreen.tsx          # Classic Redux playground component
+            ├── ReduxToolkitScreen.tsx   # Redux Toolkit playground component
+            ├── ZustandScreen.tsx        # Zustand playground component
+            ├── MobXScreen.tsx           # MobX playground component
+            ├── ContextScreen.tsx        # Context API playground component
+            ├── ReactQueryScreen.tsx     # React Query playground component
+            ├── CrudApiScreen.tsx        # CRUD REST API playground component
+            ├── GraphQLScreen.tsx        # GraphQL playground component
+            ├── ReduxApiScreen.tsx       # Redux Async Thunk playground component
+            ├── ConceptScreen.tsx        # Dynamic concept explorer component
+            ├── dashboard/               # Dashboard data, styles, and types
+            ├── styles/                  # Screen-specific stylesheet definitions
+            └── index.ts                 # Practical 2 module barrel export
+```React Query demo styles
 │       ├── crud-api/                    # CRUD API demo styles
 │       ├── graphql/                     # GraphQL demo styles
 │       └── redux-api/                   # Redux + API demo styles

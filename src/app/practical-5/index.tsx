@@ -1,3 +1,3 @@
-import { ListOfUsersScreen } from '@/pages/practical-5'
+import { ListOfUsersScreen } from '@/components/modules/practical-5'
 
 export default ListOfUsersScreen

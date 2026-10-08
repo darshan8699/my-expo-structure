@@ -74,9 +74,18 @@ npm run format:check
 ```text
 ├── src/
 │   ├── apis/                    # API client configurations & endpoints
-│   ├── app/                     # File-based navigation routes (Expo Router)
-│   ├── assets/                  # Images, fonts, and static assets
-│   ├── components/              # Shared UI design system & basic concepts
+│   ├── app/                     # File-based navigation routes & layouts (Expo Router)
+│   ├── assets/                  # Centralized images, icons, and static assets
+│   ├── components/              # UI components and feature modules
+│   │   ├── common/              # Shared reusable design system components
+│   │   └── modules/             # Feature screens, business logic & UI modules
+│   │       ├── home/            # Home screen module
+│   │       ├── explore/         # Explore screen module
+│   │       ├── practical-1/     # Practical 1 auth & dashboard module
+│   │       ├── practical-2/     # Practical 2 state management lab module
+│   │       ├── practical-3/     # Practical 3 dynamic grid & drawer module
+│   │       ├── practical-4/     # Practical 4 production auth module
+│   │       └── practical-5/     # Practical 5 full CRUD & Redux module
 │   ├── docs/                    # Complete project & practical documentation
 │   │   ├── practical-1/         # Practical 1 documentation & steps
 │   │   ├── practical-2/         # Practical 2 documentation & steps
@@ -85,7 +94,6 @@ npm run format:check
 │   │   ├── practical-5/         # Practical 5 documentation & steps
 │   │   ├── extra/               # Concepts, native builds, and developer tooling
 │   │   └── README.md            # Documentation portal
-│   ├── pages/                   # Feature presentation, styles, types & business logic
 │   ├── services/                # Context providers, hooks, and external services
 │   └── utils/                   # Theme tokens, formatters, and utility functions
 ├── __tests__/                   # Jest automated test suites

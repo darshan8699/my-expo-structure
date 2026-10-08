@@ -2,7 +2,7 @@
 
 > **Module**: Practical 1  
 > **Route Path**: `/practical-1`  
-> **Source Directory**: `src/app/practical-1/` & `src/pages/practical-1/`  
+> **Source Directory**: `src/app/practical-1/` & `src/components/modules/practical-1/`  
 > **Key Technologies**: Expo Router (Stack & Tabs), React Native, Safe Area Context, TypeScript
 
 ---
@@ -26,28 +26,38 @@ src/
 ├── app/
 │   └── practical-1/
 │       ├── _layout.tsx               # Root Stack layout for Practical 1
-│       ├── index.tsx                 # Login screen (Entry point)
-│       ├── signup.tsx                # User Registration screen
-│       ├── forgot-password.tsx       # Password recovery screen
+│       ├── index.tsx                 # Login route (thin re-export)
+│       ├── signup.tsx                # Registration route (thin re-export)
+│       ├── forgot-password.tsx       # Password recovery route (thin re-export)
 │       └── (tabs)/                   # Authenticated tab group
 │           ├── _layout.tsx           # Bottom Tabs configuration & styling
-│           ├── dashboard.tsx         # Dashboard with stats & activity
-│           ├── account.tsx           # User profile & logout screen
-│           └── settings.tsx          # Preferences & configuration screen
-└── pages/
-    └── practical-1/
-        ├── auth/
-        │   ├── login/
-        │   │   └── login.style.ts    # Styles for Login screen
-        │   ├── signup/
-        │   │   └── signup.style.ts   # Styles for Registration screen
-        │   └── forgot-password/
-        │       └── forgot-password.style.ts # Styles for Forgot Password screen
-        └── main/
-            └── dashboard/
-                ├── dashboard.data.ts # Mock data for stats and activity
-                ├── dashboard.style.ts# Styles for Dashboard layout & cards
-                └── dashboard.type.ts # TypeScript interfaces for dashboard
+│           ├── dashboard.tsx         # Dashboard route (thin re-export)
+│           ├── account.tsx           # User profile & logout route (thin re-export)
+│           └── settings.tsx          # Preferences route (thin re-export)
+└── components/
+    └── modules/
+        └── practical-1/
+            ├── auth/
+            │   ├── login/
+            │   │   ├── LoginScreen.tsx   # Login UI component
+            │   │   └── login.style.ts    # Styles for Login screen
+            │   ├── signup/
+            │   │   ├── SignupScreen.tsx  # Registration UI component
+            │   │   └── signup.style.ts   # Styles for Registration screen
+            │   └── forgot-password/
+            │       ├── ForgotPasswordScreen.tsx # Recovery UI component
+            │       └── forgot-password.style.ts # Styles for Forgot Password screen
+            ├── main/
+            │   ├── dashboard/
+            │   │   ├── DashboardScreen.tsx # Dashboard UI component
+            │   │   ├── dashboard.data.ts # Mock data for stats and activity
+            │   │   ├── dashboard.style.ts# Styles for Dashboard layout & cards
+            │   │   └── dashboard.type.ts # TypeScript interfaces for dashboard
+            │   ├── account/
+            │   │   └── AccountScreen.tsx   # Account UI component
+            │   └── settings/
+            │       └── SettingsScreen.tsx  # Settings UI component
+            └── index.ts              # Practical 1 module barrel export
 ```
 
 ---

@@ -1,3 +1,3 @@
-import { SingleUserScreen } from '@/pages/practical-5'
+import { SingleUserScreen } from '@/components/modules/practical-5'
 
 export default SingleUserScreen
