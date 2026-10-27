@@ -1,6 +1,6 @@
 import type { PracticalItem } from './home.type'
 
-export const PAGE_SIZE = 5
+export const PAGE_SIZE = 10
 
 export const PRACTICALS: PracticalItem[] = [
     {
@@ -34,5 +34,32 @@ export const PRACTICALS: PracticalItem[] = [
         description:
             'CRUD Operations & Redux: Users API (JSONPlaceholder) · Create · Read · Update · Delete · Counter Demo',
         route: '/practical-5',
+    },
+    {
+        id: '6',
+        title: 'Practical 6',
+        description:
+            'Inventory & Catalog: List Catalog · Count Variance · SQLite DB · API Test · File Upload · Live Tracking Screen',
+        route: '/practical-6',
+    },
+    {
+        id: '7',
+        title: 'Practical 7',
+        description: 'Flight Booking UI: Flight Discovery · Book Flight · Ticket Selection · Responsive Card Layout',
+        route: '/practical-7',
+    },
+    {
+        id: '8',
+        title: 'Practical 8',
+        description:
+            'Image RGB Compare: Multi-Image Selector · Camera & Gallery Picker · Color Extraction & Delta Analysis',
+        route: '/practical-8',
+    },
+    {
+        id: '9',
+        title: 'Practical 9',
+        description:
+            'Live GPS Tracking: Driver & User Apps · Real-time PubNub Pub/Sub · Map Route Simulation · Biometrics & PDF',
+        route: '/practical-9',
     },
 ]

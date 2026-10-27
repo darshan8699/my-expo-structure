@@ -18,6 +18,12 @@ export default function RootLayout() {
                 <Stack.Screen name="practical-1" />
                 <Stack.Screen name="practical-2" />
                 <Stack.Screen name="practical-3" />
+                <Stack.Screen name="practical-4" />
+                <Stack.Screen name="practical-5" />
+                <Stack.Screen name="practical-6" />
+                <Stack.Screen name="practical-7" />
+                <Stack.Screen name="practical-8" />
+                <Stack.Screen name="practical-9" />
             </Stack>
         </>
     )

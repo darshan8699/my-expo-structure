@@ -12,7 +12,11 @@
       "bundleIdentifier": "com.darshan8699.myexpostructure",
       "supportsTablet": true,
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos to compare image colors.",
+        "NSPhotoLibraryAddUsageDescription": "Allow $(PRODUCT_NAME) to save photos to your photo library.",
+        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera to take photos for color analysis.",
+        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to access your microphone."
       },
       "buildNumber": "1.0.0"
     },
@@ -42,7 +46,14 @@
           }
         }
       ],
-      "@sentry/react-native"
+      "@sentry/react-native",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you compare image colors.",
+          "cameraPermission": "The app accesses your camera to let you take photos for color analysis."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

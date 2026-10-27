@@ -1,0 +1,27 @@
+export const Color = {
+    white: '#ffffff',
+    primary: '#4284f4',
+    lightPrimary: '#b1c9ed',
+    black: '#000000',
+    lightWhite: '#555555',
+    lightGrey: '#708095',
+    borderTxtColor: '#a9bbd3',
+    titleColor: '#708095',
+    parColor: '#444444',
+    fbColor: '#3b5998',
+    gpColor: '#CC3333',
+    borderBottom: '#e5e9f5',
+    green: '#1bce8d',
+    lightBlue: '#88a0c8',
+    blue1: '#4285f4',
+    lightBlack: '#2b2b2b',
+    lightRed: '#ff5b60',
+    offBlue: '#f5f8fe',
+    lightYellow: '#ebbe44',
+    dropdownSelected: '#2c2c2c',
+    black1: '#2c2c2c',
+    black28: '#282828',
+    grey92: '#92a4bb',
+}
+
+export default Color
